@@ -1,0 +1,40 @@
+.section {
+    margin-bottom: 40px;
+}
+
+.blog .card img {
+    padding: 10px;
+    height: 500px;
+}
+
+.blog .card {
+    margin: 10px;
+    text-align: center;
+}
+
+.span {
+    color: red;
+}
+
+.head {
+    color: red;
+    width: 300px;
+    padding: 5px;
+}
+
+.span2 {
+    color: green;
+    margin-left: 15px;
+}
+#heading {
+    width: 98%;
+    background-color: #e9ecef;
+    padding: 16px;
+    margin: 10px auto;
+    border-radius: 10px;
+  }
+
+.navbar {
+    font-family: "Orbitron", sans-serif;
+    letter-spacing: 0.1em;
+}

@@ -1,0 +1,64 @@
+<%- include('../partials/header')%>
+<%- include('../partials/navbar')%> 
+
+   
+      
+       <div class="container mt-5">
+ 
+        <%- include('../partials/flash')%> 
+          
+        <h2 class=" mb-5"><%=blog.title%></h2>
+        <div class="row blog">  
+            <div class="col-lg-6">
+                <div class="card mb-5" style="width: 45rem; height: 970px;" >
+            <img src="<%=blog.img%>" class="card-img-top mb-4" alt="...">
+            <div class="card-body ">
+              <h3 class="card-title mb-4"><%=blog.title%></h3>
+              <h5 class="card-title"><span class="span">Author - </span><%=blog.author%></h5>
+              <p class="card-text"><%=blog.desc%></p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    
+              <a href="/blogs/<%=blog._id%>/edit" class="btn btn-warning">Edit</a>
+           
+              <form action="/blogs/<%=blog._id%>?_method=DELETE" method="POST">
+                <button class="btn btn-danger">Delete</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="container">
+          <div>
+          <h1>Leave a Comment</h1>
+        </div>
+          <form class="validated-form" action="/blogs/<%=blog._id%>/review" method="POST" style="width: 25rem; margin-top: 4rem;" novalidate>
+            <div class="mb-3">
+              <label for="rating" class="form-label">Rating</label>
+              <input type="range" required class="form-range" min="0" max="5" name="rating" >
+            </div>
+            <div class="mb-3">
+              <label for="desc" class="form-label">Comment</label>
+              <textarea name="comment" id="" class="form-control" cols="30" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-success mb-5">Success</button>
+          </form>
+
+          <div class="mb-3">
+            <%for(let review of blog.reviews) {%>
+               <div class="card mb-3">
+                 <h4 class="card-header"><%=review.user%></h4>
+                 <div class="card-body">
+                   <h5 class="card-title">Rating: <%=review.rating%></h5>
+                   <p class="card-text"><%= review.comment%></p>
+                 </div>
+               </div>
+            <%}%>
+          </div>
+      
+        </div>
+    </div>     
+
+
+
+    <%- include('../partials/footer')%>

@@ -1,0 +1,29 @@
+<%- include('../partials/header')%>
+
+
+
+<div class="container" style="margin-top: 3rem;">
+
+<form class="validated-form" action="/login" method="POST" style="width: 35rem; margin: 10px auto;" novalidate> 
+   
+    <%- include('../partials/flash')%>
+    <h2 class="mb-5">Log In</h2>
+  
+    <div class="mb-3">
+        <label for="username" class="form-label">UserName</label>
+        <input type="text" class="form-control" id="username" placeholder="username" name="username" required>
+      </div>
+    
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" placeholder="password" name="password" required>
+      </div>
+    <button type="submit" class="btn btn-primary">Login</button>
+    <br>
+    <h4 class="mt-5">If you have not Login Acc..</h4>
+    <a class="btn btn-danger" href="/register">Go to register</a>
+  </form>
+</div>
+
+  <%- include('../partials/footer')%>
+ 
